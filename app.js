@@ -83,7 +83,7 @@ const questions = [
   },
 ];
 
-const gifts = productCatalog;
+const gifts = typeof productCatalog !== "undefined" && Array.isArray(productCatalog) ? productCatalog : [];
 
 const answers = {};
 let currentStep = 0;
