@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ตัวช่วยหาของขวัญสำหรับคนที่คิดไม่ออก ตอบ 4 คำถามแล้วรับไอเดียที่เข้ากับคนนั้น"
+    />
+    <title>ซื้ออะไรให้ดีวะ | ตัวช่วยหาของขวัญ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Kanit:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="กลับหน้าแรก">
+        <span class="brand-mark" aria-hidden="true">🎁</span>
+        <span>ซื้ออะไรให้ดีวะ</span>
+      </a>
+      <button class="header-link" id="restartHeader" type="button">เริ่มใหม่</button>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">GIFT FINDER ฉบับคนไทย</p>
+          <h1>คิดของขวัญไม่ออก<br /><span>เดี๋ยวช่วยคิดให้</span></h1>
+          <p class="hero-description">
+            ตอบแค่ 4 คำถามสั้น ๆ แล้วเราจะคัดไอเดียของขวัญที่เข้ากับเขา
+            และไม่ทำให้คุณเสียหน้า
+          </p>
+          <button class="primary-button" id="startButton" type="button">
+            เริ่มหาเลย <span aria-hidden="true">→</span>
+          </button>
+          <p class="tiny-note">ไม่ต้องสมัคร · ใช้เวลาไม่ถึง 1 นาที</p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun-shape"></div>
+          <div class="floating-tag tag-one">ให้แล้วรอด</div>
+          <div class="floating-tag tag-two">คิดมาดี ✦</div>
+          <div class="gift-box">
+            <div class="gift-lid"></div>
+            <div class="gift-ribbon ribbon-vertical"></div>
+            <div class="gift-ribbon ribbon-horizontal"></div>
+            <div class="gift-bow bow-left"></div>
+            <div class="gift-bow bow-right"></div>
+            <span class="gift-face">•ᴗ•</span>
+          </div>
+          <span class="spark spark-one">✦</span>
+          <span class="spark spark-two">✦</span>
+          <span class="spark spark-three">✦</span>
+        </div>
+      </section>
+
+      <section class="quiz hidden" id="quiz" aria-live="polite">
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span id="stepLabel">คำถาม 1 จาก 4</span>
+            <span id="progressPercent">25%</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="quiz-card">
+          <p class="question-kicker" id="questionKicker">เริ่มจากคนรับก่อน</p>
+          <h2 id="questionTitle">คุณกำลังหาของขวัญให้ใคร?</h2>
+          <p class="question-help" id="questionHelp">เลือกคำตอบที่ใกล้ที่สุด ไม่ต้องคิดเยอะ</p>
+          <div class="options-grid" id="optionsGrid"></div>
+        </div>
+
+        <div class="quiz-actions">
+          <button class="text-button" id="backButton" type="button">← ย้อนกลับ</button>
+          <button class="text-button" id="skipButton" type="button">ข้ามข้อนี้ →</button>
+        </div>
+      </section>
+
+      <section class="results hidden" id="results" aria-live="polite">
+        <div class="results-heading">
+          <p class="eyebrow">เจอแล้ว!</p>
+          <h2>ของที่น่าจะทำให้<br /><span id="recipientText">เขา</span> ยิ้มได้</h2>
+          <p id="resultSummary">เราคัดจากคำตอบของคุณมาให้แล้ว</p>
+        </div>
+
+        <div class="result-grid" id="resultGrid"></div>
+
+        <div class="result-actions">
+          <button class="secondary-button" id="shuffleButton" type="button">สุ่มไอเดียชุดใหม่ ↻</button>
+          <button class="primary-button" id="restartButton" type="button">หาให้คนอื่น →</button>
+        </div>
+
+        <aside class="tip-card">
+          <span class="tip-icon" aria-hidden="true">💡</span>
+          <div>
+            <strong>ทริคให้ของขวัญแบบดูใส่ใจ</strong>
+            <p>เพิ่มการ์ดเขียนมือสั้น ๆ ว่าทำไมคุณถึงเลือกชิ้นนี้ แค่นี้ของธรรมดาก็พิเศษขึ้นเยอะ</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p>ทำด้วยความตั้งใจ สำหรับคนที่ไม่รู้จะซื้ออะไรดี</p>
+      <span>© 2026 ซื้ออะไรให้ดีวะ</span>
+    </footer>
+
+    <script src="catalog.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
