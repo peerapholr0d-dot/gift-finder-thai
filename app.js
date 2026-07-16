@@ -57,16 +57,49 @@ const questions = [
   },
   {
     key: "personality",
-    kicker: "ส่องนิสัยกันนิด",
-    title: "เขาเป็นคนประมาณไหน?",
-    help: "เลือกคาแรกเตอร์ที่เด่นที่สุดของเขา",
+    multiSelect: true,
+    kicker: "เจาะความสนใจให้ละเอียดขึ้น",
+    title: "เขาสนใจอะไรบ้าง?",
+    help: "เลือกได้หลายข้อ ยิ่งใกล้ตัวเขา ระบบยิ่งคัดของขวัญได้แม่นขึ้น",
     options: [
-      { value: "homebody", icon: "🛋️", label: "สายอยู่บ้าน", note: "รักความสบายและพื้นที่ส่วนตัว" },
-      { value: "foodie", icon: "🍜", label: "สายกิน", note: "รู้ร้านใหม่ก่อนทุกคนเสมอ" },
-      { value: "active", icon: "🏃", label: "สายลุย", note: "ชอบเที่ยว ออกกำลัง และกิจกรรม" },
-      { value: "creative", icon: "🎨", label: "สายครีเอทีฟ", note: "ชอบงานศิลป์ ดีไซน์ และของเก๋" },
-      { value: "tech", icon: "🎧", label: "สายเทค", note: "มีแกดเจ็ตเต็มโต๊ะ แต่ยังซื้อเพิ่ม" },
-      { value: "practical", icon: "🧰", label: "สายใช้จริง", note: "ไม่อินของตั้งโชว์ ต้องมีประโยชน์" },
+      { value: "football", icon: "⚽", label: "ฟุตบอล", note: "ทีมรัก แมตช์ดัง ของแฟนบอล" },
+      { value: "games", icon: "🎮", label: "เกม", note: "เกมเมอร์ ของเล่นตั้งโต๊ะ เกมปาร์ตี้" },
+      { value: "makeup", icon: "💄", label: "เครื่องสำอาง", note: "เมคอัพ บิวตี้ ของแต่งหน้า" },
+      { value: "skincare", icon: "🧴", label: "สกินแคร์", note: "ดูแลผิว ดูแลตัวเอง" },
+      { value: "luxury_bags", icon: "👜", label: "กระเป๋าแบรนด์เนม", note: "แฟชั่นพรีเมียม ของดูแพง" },
+      { value: "fashion", icon: "👕", label: "แฟชั่น", note: "เสื้อผ้า สไตล์ แต่งตัว" },
+      { value: "sneakers", icon: "👟", label: "รองเท้า", note: "รองเท้าแฟชั่น ใส่สบาย" },
+      { value: "watches", icon: "⌚", label: "นาฬิกา", note: "นาฬิกา สมาร์ตวอทช์ เครื่องประดับ" },
+      { value: "jewelry", icon: "💍", label: "เครื่องประดับ", note: "สร้อย แหวน กำไล ของคู่" },
+      { value: "plush", icon: "🧸", label: "ตุ๊กตา", note: "นุ่ม น่ารัก กอดได้" },
+      { value: "sanrio", icon: "🎀", label: "Sanrio / Hello Kitty", note: "คาแรกเตอร์น่ารัก" },
+      { value: "moomin", icon: "☁️", label: "Moomin", note: "มูมิน ของนุ่ม ๆ โทนละมุน" },
+      { value: "anime", icon: "✨", label: "อนิเมะ", note: "ของสะสม คาแรกเตอร์ ญี่ปุ่น" },
+      { value: "naruto", icon: "🍥", label: "นารูโตะ", note: "นินจา อนิเมะ ของแฟนด้อม" },
+      { value: "one_piece", icon: "🏴‍☠️", label: "วันพีช", note: "โจรสลัด อนิเมะ ของสะสม" },
+      { value: "marvel", icon: "🦾", label: "Marvel / Iron Man", note: "ซูเปอร์ฮีโร่ ของตั้งโต๊ะ" },
+      { value: "music", icon: "🎵", label: "เพลง", note: "เพลงโปรด ความทรงจำ เพลย์ลิสต์" },
+      { value: "instruments", icon: "🎸", label: "ดนตรี", note: "เล่นดนตรี ฟังเพลงจริงจัง" },
+      { value: "movies", icon: "🎬", label: "หนัง / ซีรีส์", note: "ดูหนัง บรรยากาศห้อง" },
+      { value: "photography", icon: "📷", label: "ถ่ายรูป", note: "กล้อง รูป ความทรงจำ" },
+      { value: "tech", icon: "💻", label: "เทคโนโลยี", note: "แกดเจ็ต อุปกรณ์ไอที" },
+      { value: "gadgets", icon: "🔌", label: "แกดเจ็ต", note: "ของเล่นไอที ของใช้บนโต๊ะ" },
+      { value: "home_decor", icon: "🏠", label: "แต่งห้อง", note: "ไฟ โต๊ะ ห้องนอน มุมทำงาน" },
+      { value: "aroma", icon: "🕯️", label: "กลิ่นหอม", note: "เทียนหอม ดิฟฟิวเซอร์ อโรมา" },
+      { value: "coffee", icon: "☕", label: "กาแฟ", note: "แก้วน้ำ คาเฟ่ ของใช้ประจำวัน" },
+      { value: "tea", icon: "🍵", label: "ชา", note: "ชา ชุดของขวัญ เครื่องดื่ม" },
+      { value: "snacks", icon: "🍪", label: "ขนม", note: "ของกิน กล่องขนม ฝากได้" },
+      { value: "cooking", icon: "🍳", label: "ทำอาหาร", note: "ครัว อุปกรณ์ ใช้จริง" },
+      { value: "fitness", icon: "🏋️", label: "ฟิตเนส", note: "ออกกำลังกาย สุขภาพ" },
+      { value: "travel", icon: "🧳", label: "ท่องเที่ยว", note: "เดินทาง จัดกระเป๋า ของพกพา" },
+      { value: "books", icon: "📚", label: "หนังสือ", note: "อ่านหนังสือ มุมสงบ" },
+      { value: "diy", icon: "🧩", label: "DIY / งานคราฟต์", note: "ประกอบเอง งานมือ" },
+      { value: "art", icon: "🎨", label: "ศิลปะ / ดีไซน์", note: "ของสวย งานครีเอทีฟ" },
+      { value: "plants", icon: "🪴", label: "ต้นไม้", note: "ปลูกต้นไม้ แต่งโต๊ะ" },
+      { value: "pets", icon: "🐾", label: "สัตว์เลี้ยง", note: "ทาสหมาแมว ของน่ารัก" },
+      { value: "stationery", icon: "✏️", label: "เครื่องเขียน", note: "ของจุกจิก โต๊ะทำงาน" },
+      { value: "wellness", icon: "🌿", label: "สุขภาพใจ", note: "พักผ่อน คลายเครียด ดูแลตัวเอง" },
+      { value: "personalized", icon: "📝", label: "ของสั่งทำ", note: "สลักชื่อ รูปคู่ ข้อความเฉพาะ" },
     ],
   },
   {
@@ -84,6 +117,54 @@ const questions = [
 ];
 
 const gifts = typeof productCatalog !== "undefined" && Array.isArray(productCatalog) ? productCatalog : [];
+
+const productInterestMap = {
+  "tea-gift-set": ["tea", "wellness", "aroma", "home_decor"],
+  "premium-snack-box": ["snacks", "foodie"],
+  "body-care-set": ["skincare", "wellness"],
+  "business-gift-set": ["fashion", "practical", "stationery"],
+  "aroma-diffuser": ["aroma", "home_decor", "wellness"],
+  "board-game": ["games", "home_decor"],
+  "wireless-earbuds": ["music", "tech", "gadgets"],
+  "instant-camera": ["photography", "travel", "art"],
+  "travel-organizer": ["travel", "fashion", "practical"],
+  "plant-pot": ["plants", "home_decor"],
+  "baby-gift-set": ["kids", "plush", "wellness"],
+  cookware: ["cooking", "home_decor", "practical"],
+  "mens-loafer-shoes": ["fashion", "sneakers"],
+  "mens-bomber-jacket": ["fashion"],
+  "cheese-mini-gift": ["snacks", "stationery"],
+  "goose-plush-pillow": ["plush", "home_decor", "wellness"],
+  "custom-music-plaque-nfc": ["music", "personalized", "home_decor"],
+  "crochet-sunflower-bouquet": ["diy", "art", "home_decor"],
+  "mens-wallet-belt-gift-set": ["fashion", "luxury_bags", "practical"],
+  "playboy-womens-watch-set": ["watches", "jewelry", "fashion"],
+  "duck-night-light": ["home_decor", "plush", "wellness"],
+  "aurora-gold-bracelet": ["jewelry", "luxury_bags"],
+  "birthday-candle-jewelry-box": ["jewelry", "home_decor", "personalized"],
+  "moomin-plush-pillow": ["moomin", "plush", "anime"],
+  "liverpool-man-u-mug": ["football", "coffee"],
+  "shy-boy-table-lamp": ["home_decor", "gadgets", "tech"],
+  "menspe-crossbody-bag": ["fashion", "luxury_bags", "travel"],
+  "civago-lucky-puppy-tumbler": ["coffee", "pets", "fashion"],
+  "eloop-magsafe-powerbank": ["tech", "gadgets", "travel"],
+  "samurai-umbrella": ["anime", "naruto", "one_piece", "travel"],
+  "instax-mini-evo-camera": ["photography", "tech", "travel"],
+  "aroma-humidifier": ["aroma", "home_decor", "wellness"],
+  "portable-mini-projector": ["movies", "tech", "gadgets", "home_decor"],
+  "kai-hair-clipper": ["wellness", "practical", "gadgets"],
+  "twilight-library-diy-book-nook": ["books", "diy", "home_decor", "art"],
+  "enchen-shaver-gift-set": ["gadgets", "wellness", "practical"],
+  "thai-funny-tshirt": ["fashion", "anime"],
+  "enter-key-stress-pillow": ["games", "tech", "wellness"],
+  "hello-kitty-ceramic-cup": ["sanrio", "coffee", "home_decor"],
+  "personalized-steel-bracelet": ["jewelry", "personalized", "fashion"],
+  "huawei-watch-fit-5": ["watches", "fitness", "tech"],
+  "gq-running-shorts": ["fitness", "fashion"],
+  "iron-man-arc-reactor-lamp": ["marvel", "tech", "gadgets", "home_decor"],
+  "scented-candle-gift-box": ["aroma", "home_decor", "wellness"],
+  "soft-kettlebell": ["fitness", "wellness"],
+};
 
 const answers = {};
 let currentStep = 0;
@@ -126,11 +207,20 @@ function renderQuestion() {
 }
 
 function renderChoiceQuestion(question) {
-  optionsGrid.className = "options-grid";
+  const selectedValues = Array.isArray(answers[question.key]) ? answers[question.key] : [];
+  optionsGrid.className = question.multiSelect ? "options-grid compact-options" : "options-grid";
   optionsGrid.innerHTML = question.options
     .map(
       (option) => `
-        <button class="option-button ${answers[question.key] === option.value ? "selected" : ""}"
+        <button class="option-button ${question.multiSelect ? "compact-option" : ""} ${
+        question.multiSelect
+          ? selectedValues.includes(option.value)
+            ? "selected"
+            : ""
+          : answers[question.key] === option.value
+            ? "selected"
+            : ""
+      }"
           type="button" data-value="${option.value}">
           <span class="option-icon" aria-hidden="true">${option.icon}</span>
           <span>
@@ -142,9 +232,21 @@ function renderChoiceQuestion(question) {
     )
     .join("");
 
+  if (question.multiSelect) {
+    optionsGrid.insertAdjacentHTML(
+      "beforeend",
+      `<button class="primary-button multi-next" id="multiNext" type="button">ต่อไป →</button>`,
+    );
+  }
+
   optionsGrid.querySelectorAll(".option-button").forEach((button) => {
     button.addEventListener("click", () => selectAnswer(question.key, button.dataset.value));
   });
+
+  const multiNext = document.getElementById("multiNext");
+  if (multiNext) {
+    multiNext.addEventListener("click", goNext);
+  }
 }
 
 function renderSliderQuestion(question) {
@@ -182,24 +284,45 @@ function renderSliderQuestion(question) {
 }
 
 function selectAnswer(key, value) {
+  const question = questions[currentStep];
+
+  if (question.multiSelect) {
+    const selected = Array.isArray(answers[key]) ? [...answers[key]] : [];
+    const existingIndex = selected.indexOf(value);
+    if (existingIndex >= 0) {
+      selected.splice(existingIndex, 1);
+    } else {
+      selected.push(value);
+    }
+    answers[key] = selected;
+    optionsGrid.querySelectorAll(".option-button").forEach((button) => {
+      button.classList.toggle("selected", selected.includes(button.dataset.value));
+    });
+    return;
+  }
+
   answers[key] = value;
   optionsGrid.querySelectorAll(".option-button").forEach((button) => {
     button.classList.toggle("selected", button.dataset.value === value);
   });
 
   window.setTimeout(() => {
-    if (currentStep < questions.length - 1) {
-      currentStep += 1;
-      renderQuestion();
-    } else {
-      renderResults();
-    }
+    goNext();
   }, 180);
+}
+
+function goNext() {
+  if (currentStep < questions.length - 1) {
+    currentStep += 1;
+    renderQuestion();
+  } else {
+    renderResults();
+  }
 }
 
 function giftScore(gift) {
   let score = 0;
-  if (gift.personality.includes(answers.personality)) score += 28;
+  score += interestScore(gift);
   if (gift.budget.includes(answers.budget)) score += 24;
   if (gift.occasions.includes(answers.occasion)) score += 20;
   if (gift.recipients.includes(answers.recipient)) score += 18;
@@ -207,6 +330,25 @@ function giftScore(gift) {
   if (ageScore(gift) > 0) score += ageScore(gift);
   score += stableTieBreaker(gift.id);
   return Math.round(score);
+}
+
+function giftInterests(gift) {
+  return [...(productInterestMap[gift.id] || []), ...(gift.personality || [])];
+}
+
+function selectedInterests() {
+  return Array.isArray(answers.personality) ? answers.personality : answers.personality ? [answers.personality] : [];
+}
+
+function interestScore(gift) {
+  const selected = selectedInterests();
+  if (!selected.length) return 12;
+
+  const tags = giftInterests(gift);
+  const matches = selected.filter((interest) => tags.includes(interest)).length;
+  if (!matches) return 0;
+
+  return Math.min(36, 18 + matches * 9);
 }
 
 function isAgeInRange(age, range) {
@@ -276,15 +418,16 @@ function recipientName() {
 }
 
 function personalityName() {
-  const names = {
-    homebody: "ชอบใช้เวลาอยู่บ้าน",
-    foodie: "มีความสุขกับของอร่อย",
-    active: "ชอบออกไปทำกิจกรรม",
-    creative: "ชอบของมีดีไซน์และเรื่องราว",
-    tech: "อินกับเทคโนโลยี",
-    practical: "ชอบของที่ใช้ได้จริง",
-  };
-  return names[answers.personality] || "มีสไตล์เฉพาะตัว";
+  const selected = selectedInterests();
+  if (!selected.length) return "มีสไตล์เฉพาะตัว";
+
+  const labels = questions
+    .find((question) => question.key === "personality")
+    .options.filter((option) => selected.includes(option.value))
+    .slice(0, 3)
+    .map((option) => option.label);
+
+  return `สนใจ${labels.join(", ")}`;
 }
 
 function productVisual(gift, index) {

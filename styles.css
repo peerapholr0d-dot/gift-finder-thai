@@ -378,6 +378,11 @@ h1 span::after {
   gap: 14px;
 }
 
+.compact-options {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
 .option-button {
   min-height: 88px;
   padding: 15px 18px;
@@ -390,6 +395,12 @@ h1 span::after {
   border-radius: 10px;
   cursor: pointer;
   transition: border 140ms ease, background 140ms ease, transform 140ms ease;
+}
+
+.compact-option {
+  min-height: 66px;
+  padding: 10px 12px;
+  gap: 10px;
 }
 
 .option-button:hover,
@@ -411,10 +422,22 @@ h1 span::after {
   font-size: 1.5rem;
 }
 
+.compact-option .option-icon {
+  width: 36px;
+  height: 36px;
+  flex-basis: 36px;
+  font-size: 1.05rem;
+  border-width: 1.5px;
+}
+
 .option-label {
   display: block;
   font-weight: 700;
   font-size: 1.03rem;
+}
+
+.compact-option .option-label {
+  font-size: 0.9rem;
 }
 
 .option-note {
@@ -422,6 +445,17 @@ h1 span::after {
   color: var(--muted);
   font-size: 0.78rem;
   margin-top: 3px;
+}
+
+.compact-option .option-note {
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.multi-next {
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin-top: 6px;
 }
 
 .slider-panel {
@@ -806,8 +840,17 @@ footer p {
     grid-template-columns: 1fr;
   }
 
+  .compact-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .option-button {
     min-height: 78px;
+  }
+
+  .compact-option {
+    min-height: 60px;
+    padding: 9px 10px;
   }
 
   .gift-card:last-child {
