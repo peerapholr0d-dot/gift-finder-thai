@@ -63,7 +63,13 @@ const questions = [
     help: "เลือกได้หลายข้อ ยิ่งใกล้ตัวเขา ระบบยิ่งคัดของขวัญได้แม่นขึ้น",
     options: [
       { value: "football", icon: "⚽", label: "ฟุตบอล", note: "ทีมรัก แมตช์ดัง ของแฟนบอล" },
+      { value: "sports", icon: "🏆", label: "กีฬา", note: "เสื้อทีม อุปกรณ์ออกกำลัง ของสายแอคทีฟ" },
       { value: "games", icon: "🎮", label: "เกม", note: "เกมเมอร์ ของเล่นตั้งโต๊ะ เกมปาร์ตี้" },
+      { value: "roblox", icon: "R$", label: "Roblox", note: "บัตรเติมเกม ของขวัญสายเกมออนไลน์" },
+      { value: "lego", icon: "▦", label: "LEGO / บล็อกต่อ", note: "ต่อบล็อก สร้างโมเดล ของเล่นสายครีเอทีฟ" },
+      { value: "collectibles", icon: "★", label: "ของสะสม", note: "ฟิกเกอร์ โมเดล กล่องสุ่ม ของแฟนด้อม" },
+      { value: "cars", icon: "🏎", label: "รถ / โมเดลรถ", note: "รถโมเดล ซูเปอร์คาร์ มอเตอร์ไซค์" },
+      { value: "f1", icon: "F1", label: "F1 / รถแข่ง", note: "ฟอร์มูล่าวัน เลโก้รถแข่ง ของสายสปีด" },
       { value: "makeup", icon: "💄", label: "เครื่องสำอาง", note: "เมคอัพ บิวตี้ ของแต่งหน้า" },
       { value: "skincare", icon: "🧴", label: "สกินแคร์", note: "ดูแลผิว ดูแลตัวเอง" },
       { value: "luxury_bags", icon: "👜", label: "กระเป๋าแบรนด์เนม", note: "แฟชั่นพรีเมียม ของดูแพง" },
@@ -84,6 +90,9 @@ const questions = [
       { value: "photography", icon: "📷", label: "ถ่ายรูป", note: "กล้อง รูป ความทรงจำ" },
       { value: "tech", icon: "💻", label: "เทคโนโลยี", note: "แกดเจ็ต อุปกรณ์ไอที" },
       { value: "gadgets", icon: "🔌", label: "แกดเจ็ต", note: "ของเล่นไอที ของใช้บนโต๊ะ" },
+      { value: "desk_setup", icon: "⌨", label: "โต๊ะคอม / Desk setup", note: "คีย์บอร์ด ไฟตั้งโต๊ะ ของแต่งมุมทำงาน" },
+      { value: "home_entertainment", icon: "📺", label: "ดูหนัง / เล่นเกมบ้าน", note: "โปรเจกเตอร์ เครื่องเกม หูฟัง ความบันเทิงในบ้าน" },
+      { value: "digital", icon: "🎫", label: "ดิจิทัลกิฟต์", note: "บัตรเติมเงิน เกม ไอเท็มออนไลน์" },
       { value: "home_decor", icon: "🏠", label: "แต่งห้อง", note: "ไฟ โต๊ะ ห้องนอน มุมทำงาน" },
       { value: "aroma", icon: "🕯️", label: "กลิ่นหอม", note: "เทียนหอม ดิฟฟิวเซอร์ อโรมา" },
       { value: "coffee", icon: "☕", label: "กาแฟ", note: "แก้วน้ำ คาเฟ่ ของใช้ประจำวัน" },
@@ -100,6 +109,9 @@ const questions = [
       { value: "pets", icon: "🐾", label: "สัตว์เลี้ยง", note: "ทาสหมาแมว ของน่ารัก" },
       { value: "stationery", icon: "✏️", label: "เครื่องเขียน", note: "ของจุกจิก โต๊ะทำงาน" },
       { value: "wellness", icon: "🌿", label: "สุขภาพใจ", note: "พักผ่อน คลายเครียด ดูแลตัวเอง" },
+      { value: "kids", icon: "🧒", label: "เด็ก / หลาน", note: "ของเล่น เสริมจินตนาการ ของน่ารักสำหรับเด็ก" },
+      { value: "practical", icon: "✓", label: "ของใช้จริง", note: "ใช้ได้ทุกวัน ไม่เสี่ยงวางทิ้งไว้เฉย ๆ" },
+      { value: "romantic", icon: "♡", label: "โรแมนติก", note: "ของคู่ ของสลักชื่อ ของที่มีความหมาย" },
       { value: "personalized", icon: "📝", label: "ของสั่งทำ", note: "สลักชื่อ รูปคู่ ข้อความเฉพาะ" },
     ],
   },
@@ -109,10 +121,12 @@ const questions = [
     title: "งบประมาณเท่าไหร่ดี?",
     help: "เราไม่ตัดสิน งบไหนก็มีของที่ดูดีได้",
     options: [
-      { value: "small", icon: "🪙", label: "ไม่เกิน 500 บาท", note: "เล็กแต่เลือกมาดี" },
-      { value: "medium", icon: "💵", label: "500 – 1,500 บาท", note: "ช่วงปลอดภัย ให้ได้หลายโอกาส" },
-      { value: "large", icon: "💳", label: "1,500 – 3,000 บาท", note: "จัดเต็มแบบยังมีสติ" },
-      { value: "premium", icon: "💎", label: "3,000 บาทขึ้นไป", note: "คนนี้สำคัญจริง ยอมแล้ว" },
+      { value: "100", icon: "🪙", label: "ไม่เกิน 100 บาท", note: "เล็ก ๆ แต่น่ารัก" },
+      { value: "300", icon: "🎁", label: "ไม่เกิน 300 บาท", note: "งบเบาแต่ตั้งใจ" },
+      { value: "500", icon: "💵", label: "ไม่เกิน 500 บาท", note: "ช่วงปลอดภัย หาของง่าย" },
+      { value: "1000", icon: "💳", label: "ไม่เกิน 1,000 บาท", note: "ดูดีขึ้นอีกระดับ" },
+      { value: "3000", icon: "✨", label: "ไม่เกิน 3,000 บาท", note: "จัดเต็มแบบพอดี" },
+      { value: "5000plus", icon: "💎", label: "5,000 บาทขึ้นไป", note: "คนนี้สำคัญจริง" },
     ],
   },
 ];
@@ -180,6 +194,21 @@ const productInterestMap = {
   "kawasaki-ninja-h2r-model": ["games", "gadgets", "travel"],
   "popmart-naruto-akatsuki-set": ["anime", "naruto", "games"],
   "popmart-demon-slayer-battle-set": ["anime", "games", "art"],
+  "ganesha-purple-bracelet": ["jewelry", "wellness", "personalized"],
+  "guan-yin-white-bracelet": ["jewelry", "wellness", "personalized"],
+  "uniqlo-ut-naruto-shueisha-tshirt": ["anime", "naruto", "fashion"],
+  "manchester-united-25-26-jersey": ["football", "sports", "fashion"],
+  "playstation-5-slim-console": ["games", "tech", "home_entertainment"],
+  "nintendo-switch-2-console": ["games", "tech", "home_entertainment"],
+  "oppo-enco-buds3-earbuds": ["music", "tech", "practical"],
+  "sony-wh-xb910n-headphones": ["music", "tech", "games", "home_entertainment"],
+  "olyps-thai-gaming-keyboard": ["games", "tech", "desk_setup", "practical"],
+  "jujutsu-kaisen-season-2-keyboard": ["anime", "games", "desk_setup", "tech"],
+  "custom-name-silver-necklace": ["jewelry", "personalized", "romantic", "fashion"],
+  "roblox-thai-gift-card-300": ["games", "roblox", "kids", "digital"],
+  "one-piece-mini-building-blocks": ["anime", "one_piece", "collectibles", "kids"],
+  "lego-classic-10696-creative-brick-box": ["lego", "diy", "kids", "collectibles"],
+  "lego-speed-champions-ferrari-sf24": ["lego", "cars", "f1", "sports", "collectibles"],
 };
 
 const answers = {};
@@ -339,13 +368,70 @@ function goNext() {
 function giftScore(gift) {
   let score = 0;
   score += interestScore(gift);
-  if (gift.budget.includes(answers.budget)) score += 24;
+  score += budgetScore(gift);
   if (gift.occasions.includes(answers.occasion)) score += 20;
   if (gift.recipients.includes(answers.recipient)) score += 18;
   if (genderMatches(gift)) score += 14;
   if (ageScore(gift) > 0) score += ageScore(gift);
   score += stableTieBreaker(gift.id);
   return Math.round(score);
+}
+
+function productPrice(gift) {
+  const raw = String(gift.currentPrice || "");
+  const numeric = raw.replace(/[^\d]/g, "");
+  return numeric ? Number(numeric) : null;
+}
+
+function selectedBudgetLimit() {
+  if (!answers.budget) return null;
+  if (answers.budget === "5000plus") return { min: 5000 };
+  return { max: Number(answers.budget) };
+}
+
+function selectedBudgetBand() {
+  const bands = {
+    100: { min: 0, max: 100 },
+    300: { min: 101, max: 300 },
+    500: { min: 301, max: 500 },
+    1000: { min: 501, max: 1000 },
+    3000: { min: 1001, max: 3000 },
+    "5000plus": { min: 5000, max: Infinity },
+  };
+
+  return bands[answers.budget] || null;
+}
+
+function isWithinSelectedBudget(gift) {
+  const band = selectedBudgetBand();
+  if (!band) return true;
+
+  const price = productPrice(gift);
+  if (!price) return true;
+
+  if (band.max === Infinity) return price >= band.min;
+  return price <= band.max;
+}
+
+function budgetScore(gift) {
+  const band = selectedBudgetBand();
+  if (!band) return 0;
+
+  const price = productPrice(gift);
+  if (!price) return 6;
+
+  if (band.max === Infinity) {
+    if (price >= band.min) return 36;
+    return -999;
+  }
+
+  if (price > band.max) return -999;
+  if (price >= band.min) return 36;
+
+  const lowerDistance = band.min - price;
+  if (lowerDistance <= 200) return 20;
+  if (lowerDistance <= 700) return 12;
+  return 5;
 }
 
 function giftInterests(gift) {
@@ -365,6 +451,14 @@ function interestScore(gift) {
   if (!matches) return 0;
 
   return Math.min(36, 18 + matches * 9);
+}
+
+function matchesSelectedInterests(gift) {
+  const selected = selectedInterests();
+  if (!selected.length) return true;
+
+  const tags = giftInterests(gift);
+  return selected.some((interest) => tags.includes(interest));
 }
 
 function isAgeInRange(age, range) {
@@ -395,6 +489,8 @@ function ageScore(gift) {
 function isStrongFit(gift) {
   if (!gift.affiliateUrl) return false;
   if (!genderMatches(gift)) return false;
+  if (!matchesSelectedInterests(gift)) return false;
+  if (!isWithinSelectedBudget(gift)) return false;
 
   const age = Number(answers.age);
   if (age && gift.ageRange && !isAgeInRange(age, gift.ageRange)) {
